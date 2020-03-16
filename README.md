@@ -1,11 +1,8 @@
-# Image-resize
-
-Resize image bigger.
+# Book Classification
 
 ## 1. Install Requirement
 
 - numpy
-  - numpy<1.17
 - h5py
 - matplotlib
 - tensorflow
