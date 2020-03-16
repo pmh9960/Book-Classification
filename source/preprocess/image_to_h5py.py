@@ -7,9 +7,6 @@ import os
 
 folder_names = os.listdir("sample_images")
 path_hdf5 = "datasets/dataset_1.hdf5"
-# images128 = []
-# images256 = []
-# images512 = []
 images = []
 labels = []
 

@@ -1,4 +1,4 @@
-from keras.models import Sequential, load_model
+from keras.models import Sequential
 from keras.layers.core import Dense
 from keras import optimizers, initializers, losses
 import numpy as np
@@ -37,6 +37,7 @@ start = time.time()
 model = Sequential()
 # print(f"(input_dim, output_dim) = ({input_dim}, {output_dim})")
 layers_dim = [input_dim, 1000, output_dim]
+valid = False
 
 # First hidden layer
 model.add(
@@ -76,7 +77,7 @@ print(layers_dim)
 history = model.fit(
     x_data,
     y_data,
-    # validation_split=0.25,
+    validation_split=0.25 * valid,
     epochs=100,
     batch_size=50,
     shuffle=True,
@@ -94,7 +95,7 @@ with open("models/" + current_time_str + "/model" + ".json", "w") as json_file:
 # Save weight with h5 format
 model.save_weights("models/" + current_time_str + "/weight.h5")
 
-save_history(history, current_time_str, valid=False)
+save_history(history, current_time_str, valid=valid)
 
 
 plot_model(model, to_file="models/" + current_time_str + "/model.png", show_shapes=True)

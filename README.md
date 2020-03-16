@@ -42,6 +42,6 @@
 - pydot==1.2.3
 - pydot-ng
 - graphviz
-  - Windows에서는 pip으로 설치가 제대로 안됨.<br> 따로 찾아가서 설치할 것.
+  - Windows에서는 pip으로 설치가 제대로 안됨. <br> 따로 찾아가서 설치할 것.
   - [Graphviz](https://www.graphviz.org/)
 ```
