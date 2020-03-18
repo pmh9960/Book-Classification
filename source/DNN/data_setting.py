@@ -27,6 +27,12 @@ def load_dataset(hdf5_filename):
     return train_set_image, train_set_label
 
 
+def convert_to_one_hot(y_data_orig):
+    num = np.unique(y_data_orig, axis=0)
+    num = num.shape[0]
+    return np.eye(num)[y_data_orig]
+
+
 def flatting_images(train_set_X):
     m_train = train_set_X.shape[0]
     train_set_X_flatten = train_set_X.reshape((m_train, -1)) / 255.0
